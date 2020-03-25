@@ -1,1 +1,80 @@
-// Specific CSS for your home-page
+
+.burger_banner {
+  height: 55vh;
+  background-image: url("Burger.jpg");
+  background-position: center;
+  background-size: cover;
+
+}
+
+.homebar {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+
+.logotitle {
+  display: flex;
+  position: relative;
+  margin-top: 8px;
+  margin-left: 8px;
+}
+
+.title {
+  color: white;
+  position: absolute;
+  left: 78px;
+  top: 15px;
+  text-decoration: underline;
+}
+
+.menu {
+  padding-left: 4px;
+}
+
+.dropdown {
+  position: absolute;
+  right: 9vw;
+  top: 18px;
+}
+
+.dropdown-menu {
+  max-width: 100px;
+  transform: translate3d(-42px, 38px, 0px);
+}
+.dropdown-item {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+// <!-------second-part-of-splash---------->
+
+
+.latersplash {
+  height: 45vh;
+  width: 100%;
+  background-image: url("new_home_bg.png");
+  background-size: cover;
+}
+
+
+
+// #8bec5b
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
