@@ -40,7 +40,7 @@
 <div class="latersplash">
 
   <div class="postbox">
-    <%= simple_form_for @user do |f| %>
+    <%= simple_form_for @user, :url => users_path, :method => :get do |f| %>
       <%= f.input :address, label: "Enter your Postcode", placeholder: "SW19 7PR" %>
       <%= f.submit "Search Restaurants", class: "postbutton" %>
     <% end %>

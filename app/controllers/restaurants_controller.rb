@@ -1,4 +1,5 @@
-class RestaurantController < ApplicationController
+class RestaurantsController < ApplicationController
+  skip_before_action :authenticate_user!
   def index
     @restaurants = Restaurant.all
   end
@@ -24,6 +25,6 @@ class RestaurantController < ApplicationController
   private
 
   def new_rest_params
-    params.require(:restaurant).permit(:address, :cuisine, :bio, :name)
+      params.require(:restaurant).permit(:address, :cuisine, :bio, :name)
   end
 end
