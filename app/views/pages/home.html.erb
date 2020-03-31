@@ -38,11 +38,13 @@
 </div>
 
 <div class="latersplash">
-  <%= simple_form_for @user do |f| %>
-    <%= f.input :address, label: "Enter your Postcode" %>
-    <%= f.submit "Search Restaurants" %>
 
-  <% end %>
+  <div class="postbox">
+    <%= simple_form_for @user do |f| %>
+      <%= f.input :address, label: "Enter your Postcode", placeholder: "SW19 7PR" %>
+      <%= f.submit "Search Restaurants", class: "postbutton" %>
+    <% end %>
+  </div>
 
   <div class="direct_message">
     <p>For Every Order We Take, We Plant A Tree!</p>
