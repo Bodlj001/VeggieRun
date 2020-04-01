@@ -32,7 +32,13 @@
 }
 
 .menu {
-  padding-left: 4px;
+  padding-left: 6px;
+  color: rgba(0,0,0,0.8);
+  font-size: 5.2vw;
+}
+
+.btn-light {
+  border-radius: 7px;
 }
 
 .dropdown {
@@ -97,9 +103,10 @@
   text-align: center;
   border-radius: 7px;
   background-color: #61ED38;
+  border: none;
   color: white;
   &:hover {
-    background-color: #61ED
+    background-color: #B8F7A8;
   }
 }
 

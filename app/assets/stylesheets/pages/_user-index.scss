@@ -1,0 +1,50 @@
+
+.logobar {
+  display: flex;
+  position: relative;
+}
+
+.navtitle {
+  position: absolute;
+  left: 15vw;
+  top: 11px;
+  font-size: 6vw;
+}
+
+.navbar-toggler {
+  border-radius: 7px;
+  padding: 7px 11px;
+}
+
+.nav-item {
+  border-top: solid 1px rgba(0,0,0,0.1)
+}
+
+.pin_icon {
+  width: 6vw;
+}
+
+.user_location {
+  min-width: 60vw;
+}
+
+.flexy {
+  display: flex;
+  padding-top: 10px;
+}
+
+.change_location {
+  color: #5C2976;
+  text-decoration: none;
+  &:hover {
+    color: #BB5BEC;
+    text-decoration: none;
+  }
+}
+
+.searchform {
+  min-width: 70vw;
+}
+
+
+
