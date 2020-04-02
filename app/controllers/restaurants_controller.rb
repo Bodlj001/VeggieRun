@@ -2,6 +2,11 @@ class RestaurantsController < ApplicationController
   skip_before_action :authenticate_user!
   def index
     @restaurants = Restaurant.all
+    if params[:query]
+      @little_address = params[:address].split(',')[0]
+    else
+      @little_address = params[:restaurant][:address].split(',')[0]
+    end
   end
 
   def show

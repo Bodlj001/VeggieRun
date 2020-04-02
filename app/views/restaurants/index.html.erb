@@ -53,4 +53,40 @@
   </div>
 </div>
 
-<div class="search-form"></div>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm" style="height:50px;">
+      <div class="flexy">
+        <div class="user_location">
+          <%= image_tag('pin.png', class: "pin_icon") %>
+          <%= @little_address %>
+        </div>
+        <%= link_to "Change Location", root_path, class: "change_location" %>
+      </div>
+    </div>
+  </div>
+
+  <div class="search-form">
+    <%= form_tag restaurants_path, method: :get do %>
+      <%= text_field_tag :query, params[:query], class: "form-control", placeholder: "Find a meal" %>
+      <% if params[:query] %>
+        <%= hidden_field_tag :address, params[:address], value: params[:address] %>
+      <% else %>
+        <%= hidden_field_tag :address, params[:address], value: params[:restaurant][:address] %>
+      <% end %>
+      <%= submit_tag "Search", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
