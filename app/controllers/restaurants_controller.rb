@@ -1,11 +1,7 @@
 class RestaurantsController < ApplicationController
   skip_before_action :authenticate_user!
   def index
-    if params[:query].present?
-      @restaurants = Restaurant.where(title: params[:query])
-    else
-      @restaurants = Restaurant.all
-    end
+    @restaurants = Restaurant.all
   end
 
   def show
@@ -29,6 +25,6 @@ class RestaurantsController < ApplicationController
   private
 
   def new_rest_params
-      params.require(:restaurant).permit(:address, :cuisine, :bio, :name)
+      params.require(:restaurant).permit(:address, :cuisine, :bio, :name, :vegan)
   end
 end
