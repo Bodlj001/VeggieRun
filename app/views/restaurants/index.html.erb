@@ -77,6 +77,15 @@
       <%= submit_tag "Search", class: "btn btn-primary" %>
     <% end %>
   </div>
+
+  <div class="restaurant_cards">
+    <% @selections.each do |selection| %>
+      <%= selection.name %>
+      <%= selection.cuisine %>
+      <p>Vegan: <%= selection.vegan %></p>
+      <br>
+    <% end %>
+  </div>
 </div>
 
 
