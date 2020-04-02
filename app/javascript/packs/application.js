@@ -32,7 +32,12 @@ if (addressInput) {
   });
 }
 
-const searchButton = document.getElementById('search-restaurants');
+// const results = document.getElementById('results')
+// const searchForm = document.getElementById('search-rest');
 
-searchButton.addEventListener('click', () => {
-})
+// searchForm.addEventListener('submit', (event) => {
+//   event.preventDefault();
+//   results.innerHTML = "";
+//   const keyword = document.getElementById('keyword').value;
+//   listRestaurants(keyword);
+// })

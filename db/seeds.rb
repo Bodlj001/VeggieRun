@@ -5,22 +5,22 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-require 'faker'
+# require 'faker'
 
-puts "Removing all restaurants"
+# puts "Removing all restaurants"
 
-Restaurant.all.delete('')
+# Restaurant.all.delete('')
 
-25.times do
-  Restaurant.create({
-    name: Faker::Restaurant.name,
-    address: Faker::Address.street_address,
-    cuisine: Faker::Restaurant.type,
-    bio: Faker::Restaurant.description,
-    vegan: [true, false].sample
-  })
-  puts "#{Restaurant.name} has been created"
-end
+# 25.times do
+#   Restaurant.create({
+#     name: Faker::Restaurant.name,
+#     address: Faker::Address.street_address,
+#     cuisine: Faker::Restaurant.type,
+#     bio: Faker::Restaurant.description,
+#     vegan: [true, false].sample
+#   })
+#   puts "#{Restaurant.name} has been created"
+# end
 
 
 

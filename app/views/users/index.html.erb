@@ -65,34 +65,6 @@
       </div>
   </div>
 
-  <div class="row">
-    <div class="col-sm" style="height:50px;">
-      <div class="flexy">
-
-        <div class="searchform">
-          <%= form_tag users_path, method: :get do %>
-            <%= text_field_tag :query,
-              params[:query],
-              class: "form-control",
-              placeholder: "Find a restaurant"
-            %>
-            <%= hidden_field_tag "the_address", @user_address %>
-            <%= submit_tag "Search", class: "btn btn-primary", id: "search-restaurants" %>
-          <% end %>
-        </div>
-
-      </div>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="container-fluid">
-      <% @restaurants.each do |restaurant| %>
-        <%= restaurant.name %>
-        <br>
-      <% end %>
-    </div>
-  </div>
 </div>
 
 
