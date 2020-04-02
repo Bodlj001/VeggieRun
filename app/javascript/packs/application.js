@@ -31,3 +31,8 @@ if (addressInput) {
     container: addressInput
   });
 }
+
+const searchButton = document.getElementById('search-restaurants');
+
+searchButton.addEventListener('click', () => {
+})

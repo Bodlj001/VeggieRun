@@ -59,7 +59,7 @@
       <div class="flexy">
         <div class="user_location">
           <%= image_tag('pin.png', class: "pin_icon") %>
-          <%= @user_display_address %>
+          <%= @user_address.split(',')[0] %>
         </div>
         <%= link_to "Change Location", root_path, class: "change_location" %>
       </div>
@@ -70,17 +70,27 @@
       <div class="flexy">
 
         <div class="searchform">
-          <%= form_tag restaurants_path, method: :get do %>
+          <%= form_tag users_path, method: :get do %>
             <%= text_field_tag :query,
               params[:query],
               class: "form-control",
-              placeholder: "Search for restaurants"
+              placeholder: "Find a restaurant"
             %>
-            <%= submit_tag "Search", class: "btn btn-primary" %>
+            <%= hidden_field_tag "the_address", @user_address %>
+            <%= submit_tag "Search", class: "btn btn-primary", id: "search-restaurants" %>
           <% end %>
         </div>
 
       </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="container-fluid">
+      <% @restaurants.each do |restaurant| %>
+        <%= restaurant.name %>
+        <br>
+      <% end %>
     </div>
   </div>
 </div>

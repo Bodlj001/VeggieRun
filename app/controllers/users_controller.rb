@@ -3,9 +3,15 @@ class UsersController < ApplicationController
 
   def index
     @restaurants = Restaurant.all
+    @user = User.new
+
+    # if params[:query] && params[:query] != ""
+    #   @the_address = params[:the_address]
+    # elsif params[:the_address]
+
+    # else
     @user_details = params[:user]
     @user_address = @user_details[:address]
-    little_address = @user_address.split(",")
-    @user_display_address = little_address[0]
+    # end
   end
 end
