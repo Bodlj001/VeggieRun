@@ -11,7 +11,7 @@ puts "Removing all restaurants"
 
 Restaurant.all.delete('')
 
-25.times do
+15.times do
   Restaurant.create({
     name: Faker::Restaurant.name,
     address: Faker::Address.street_address,

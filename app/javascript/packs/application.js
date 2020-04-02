@@ -23,7 +23,7 @@ require("channels")
 // ----------------------------------------------------
 import "bootstrap";
 
-const addressInput = document.getElementById('user_address');
+const addressInput = document.getElementById('restaurant_address');
 
 if (addressInput) {
   const places = require('places.js');
@@ -32,7 +32,7 @@ if (addressInput) {
   });
 }
 
-const searchButton = document.getElementById('search-restaurants');
+// const searchButton = document.getElementById('search-restaurants');
 
-searchButton.addEventListener('click', () => {
-})
+// searchButton.addEventListener('click', () => {
+// })
