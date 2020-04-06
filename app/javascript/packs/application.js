@@ -32,7 +32,15 @@ if (addressInput) {
   });
 }
 
-// const searchButton = document.getElementById('search-restaurants');
+// const areVeggie = document.getElementById('veggie-button');
 
-// searchButton.addEventListener('click', () => {
-// })
+// areVeggie.addEventListener('click', (event) => {
+//   console.log(event);
+//   console.log(areVeggie.innerHTML);
+//   if (areVeggie.innerHTML = "Vegan") {
+//     areVeggie.innerHTML = "Veggie";
+//   } else if (areVeggie.innerHTML = "Veggie") {
+//     areVeggie.innerHTML = "Vegan";
+//   }
+//   event.preventDefault();
+// });

@@ -10,10 +10,11 @@ class RestaurantsController < ApplicationController
     end
 
     if params[:query] && params[:query] != ""
-      @selections = Restaurant.search_by_cuisine_name("#{params[:query]}")
+      @selections = Restaurant.search_by_cuisine_name_vegan("#{params[:query]}" + "#{@isvegan}")
     else
       @selections = Restaurant.all
     end
+
   end
 
 
