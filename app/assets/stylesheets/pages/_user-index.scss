@@ -42,9 +42,48 @@
   }
 }
 
-.searchform {
-  min-width: 70vw;
+
+
+.rest-search {
+  position: relative;
+  width: 55vw;
+  padding: 4px;
+  border-radius: 7px 0px 0px 7px;
+  border: solid 1px rgba(0,0,0,0.2);
+  &:hover {
+    outline:none;
+  }
 }
 
+.sherlock-search {
+  background-color: white;
+  border: solid 1px rgba(0,0,0,0.2);
+  border-left: none;
+  padding: 4px 7px 4px 7px;
+  border-radius: 0px 7px 7px 0px;
+  &:hover {
+    background-color: rgba(0,0,0,0.2);
+    outline: none;
+  }
+}
 
+.filter-dropdown {
+  height: 3.5vh;
+  .filter_icon {
+    height: 3.5vh;
+  }
+}
 
+.second_flex {
+  margin-right: 7vw;
+}
+
+.flex {
+  display: flex;
+}
+
+.display-flex {
+  margin-left: 1vw;
+  display: flex;
+  justify-content: space-between;
+}

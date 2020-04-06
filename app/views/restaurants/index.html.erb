@@ -68,13 +68,38 @@
 
   <div class="search-form">
     <%= form_tag restaurants_path, method: :get do %>
-      <%= text_field_tag :query, params[:query], class: "form-control", placeholder: "Find a meal" %>
-      <% if params[:query] %>
-        <%= hidden_field_tag :address, params[:address], value: params[:address] %>
-      <% else %>
-        <%= hidden_field_tag :address, params[:address], value: params[:restaurant][:address] %>
-      <% end %>
-      <%= submit_tag "Search", class: "btn btn-primary" %>
+      <div class="display-flex">
+        <div class="flex">
+          <div class="parent_stick">
+            <%= text_field_tag :query, params[:query], class: "rest-search", placeholder: "Find a meal" %>
+            <% if params[:query] %>
+              <%= hidden_field_tag :address, params[:address], value: params[:address] %>
+            <% else %>
+              <%= hidden_field_tag :address, params[:address], value: params[:restaurant][:address] %>
+            <% end %>
+          </div>
+          <div class="stick">
+            <%= button_tag(type: "submit", class: "sherlock-search") do %>
+              <i class='fas fa-search'></i>
+            <% end %>
+          </div>
+        </div>
+
+        <div class="second_flex">
+          <%= button_tag(type: "submit", class: "Vegan-veggie", id: "veggie-button") do %>
+            <div class="dropdown">
+              <button class="filter-dropdown" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <%= image_tag("filter.png", class: "filter_icon") %>
+              </button>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                <%= check_box_tag :query, params[:query], class: "dropdown-item" %>
+                <button class="dropdown-item" type="button">Another action</button>
+                <button class="dropdown-item" type="button">Something else here</button>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
     <% end %>
   </div>
 
