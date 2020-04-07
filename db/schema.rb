@@ -35,7 +35,7 @@ ActiveRecord::Schema.define(version: 2020_03_26_084150) do
     t.float "longitude", default: 0.0
     t.string "cuisine"
     t.integer "rating"
-    t.boolean "vegan", default: false
+    t.string "vegan", default: "veggie"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

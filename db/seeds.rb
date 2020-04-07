@@ -17,7 +17,7 @@ Restaurant.all.delete('')
     address: Faker::Address.street_address,
     cuisine: Faker::Restaurant.type,
     bio: Faker::Restaurant.description,
-    vegan: [true, false].sample
+    vegan: ['veggie', 'vegan'].sample
   })
   puts "#{Restaurant.name} has been created"
 end

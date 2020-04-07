@@ -9,8 +9,12 @@ class RestaurantsController < ApplicationController
       @little_address = params[:restaurant][:address].split(',')[0]
     end
 
-    if params[:query] && params[:query] != ""
-      @selections = Restaurant.search_by_cuisine_name_vegan("#{params[:query]}" + "#{@isvegan}")
+    if (params[:query] && params[:query] != "") && (params[:query2].nil? || params[:query2] == "")
+      @selections = Restaurant.search_by_cuisine_name_bio_vegan("#{params[:query]}")
+    elsif (params[:query] && params[:query] != "") && (params[:query2] && params[:query2] != "")
+      @selections = Restaurant.search_by_cuisine_name_bio_vegan("#{params[:query]} #{params[:query2]}")
+    elsif (params[:query2] && params[:query2] != "") && (params[:query].nil? || params[:query] == "")
+      @selections = Restaurant.search_by_cuisine_name_bio_vegan("#{params[:query2]}")
     else
       @selections = Restaurant.all
     end

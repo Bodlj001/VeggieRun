@@ -3,8 +3,8 @@ class Restaurant < ApplicationRecord
   after_validation :geocode, if: :will_save_change_to_address?
 
   include PgSearch::Model
-  pg_search_scope :search_by_cuisine_name_vegan,
-    against: [ :cuisine, :name, :vegan ],
+  pg_search_scope :search_by_cuisine_name_bio_vegan,
+    against: [ :cuisine, :name, :vegan, :bio],
     using: {
       tsearch: { prefix: true }
     }
