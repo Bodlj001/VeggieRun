@@ -8,7 +8,7 @@ class CreateRestaurants < ActiveRecord::Migration[6.0]
       t.float :longitude, default: 0
       t.string :cuisine
       t.integer :rating
-      t.boolean :vegan, default: false
+      t.string :vegan, default: 'veggie'
 
       t.timestamps
     end
