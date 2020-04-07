@@ -18,13 +18,7 @@ class RestaurantsController < ApplicationController
     else
       @selections = Restaurant.all
     end
-
   end
-
-
-
-
-
 
 
   def show
