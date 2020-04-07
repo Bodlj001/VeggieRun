@@ -35,6 +35,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[6.0]
 
       ## Location
       t.string :address
+      t.boolean :owner, default: false
       t.float :latitude, default: 0
       t.float :longitude, default: 0
 
