@@ -1,9 +1,10 @@
 class RestaurantsController < ApplicationController
-  skip_before_action :authenticate_user!
+  skip_before_action :authenticate_user!, only: [:index]
   def index
     @restaurants = Restaurant.all
 
     if params[:query]
+
       @little_address = params[:address].split(',')[0]
     else
       @little_address = params[:restaurant][:address].split(',')[0]
@@ -18,6 +19,8 @@ class RestaurantsController < ApplicationController
     else
       @selections = Restaurant.all
     end
+
+    authorize @restaurants
   end
 
 

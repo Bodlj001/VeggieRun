@@ -77,7 +77,7 @@
             <% else %>
               <%= hidden_field_tag :address, params[:address], value: params[:restaurant][:address] %>
             <% end %>
-            <%= hidden_field_tag :query2, params[:query2], value: params[:query2] %>
+            <%= hidden_field_tag :query2, params[:query2], value: "" %>
           </div>
           <div class="stick">
             <%= button_tag(type: "submit", class: "sherlock-search") do %>
