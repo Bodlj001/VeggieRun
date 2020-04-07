@@ -47,6 +47,7 @@ ActiveRecord::Schema.define(version: 2020_03_26_084150) do
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
     t.string "address"
+    t.boolean "owner", default: false
     t.float "latitude", default: 0.0
     t.float "longitude", default: 0.0
     t.datetime "created_at", precision: 6, null: false
