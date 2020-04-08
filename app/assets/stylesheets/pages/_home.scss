@@ -4,7 +4,14 @@
   background-image: url("Burger.jpg");
   background-position: center;
   background-size: cover;
+}
 
+.tag_line {
+  color: white;
+  font-size: 5vw;
+  padding-left: 4vw;
+  padding-top: 3vh;
+  width: 44%;
 }
 
 .homebar {
@@ -84,7 +91,7 @@
 
 .postbox {
   width: 60vw;
-  height: 15vh;
+  height: 16vh;
   background-color: white;
   position: absolute;
   left: 10vw;
@@ -99,7 +106,7 @@
 .postbutton {
   font-size: 3.5vw;
   width: 100%;
-  height: 25px;
+  height: 35px;
   text-align: center;
   border-radius: 7px;
   background-color: #61ED38;
@@ -111,8 +118,9 @@
 }
 
 .optional {
-  font-size: 3vw;
-  text-align: center;
+  font-size: 3.3vw;
+  text-align: left;
+  padding-top: 0.3vh;
   margin-bottom: 5px;
 
 }
