@@ -196,12 +196,20 @@
     </div>
   </div>
 
-
+  <div class="avalible-rest">
+    <div class="rest_icon">
+      <i class="fas fa-utensils"></i>
+    </div>
+    <div class="num_of_rest">
+      <p><%= @selections.count %> Open restaurants</p>
+    </div>
+  </div>
 
   <div class="restaurant_cards">
     <% @selections.each do |selection| %>
       <%= selection.name %>
       <%= selection.cuisine %>
+      <%= selection.bio %>
       <p>Vegan: <%= selection.vegan %></p>
       <br>
     <% end %>
