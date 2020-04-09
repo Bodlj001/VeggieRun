@@ -1,0 +1,37 @@
+.signin_background {
+  width: 100vw;
+  height: 100vh;
+  // background: linear-gradient( #61ED38, #BB5BEC);
+}
+
+.signupform {
+  margin-top: 30px;
+  width: 70vw;
+  height: 48vh;
+  background-color: white;
+  border-radius: 7px;
+  border: solid 1px rgba(0,0,0,0.1);
+  box-shadow: 2px 2px 2px 2px rgba(0,0,0,0.2);
+}
+
+.required {
+  abbr {
+    opacity: 0;
+    z-index: 0;
+    width: 0px;
+    height: 0px;
+  }
+}
+
+.devise_item {
+  .form-group {
+    .form-control {
+      border-radius: 20px;
+    }
+  }
+}
+.form-control {
+  &:focus{
+    outline: none;
+  }
+}

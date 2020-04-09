@@ -29,7 +29,10 @@
         </div>
       </button>
       <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-        <button class="dropdown-item" type="button">Action</button>
+        <%= form_tag new_user_registration_path, class: "nav-item",  method: :get do %>
+          <%= hidden_field_tag :owner, params[:owner], value: true %>
+          <%= submit_tag "New Restaurants", class: "dropdown-item nav-item" %>
+        <% end %>
         <button class="dropdown-item" type="button">Another action</button>
         <button class="dropdown-item" type="button">Something else here</button>
       </div>
