@@ -4,7 +4,6 @@ class RestaurantsController < ApplicationController
     @restaurants = Restaurant.all
 
     if params[:query]
-
       @little_address = params[:address].split(',')[0]
     else
       @little_address = params[:restaurant][:address].split(',')[0]

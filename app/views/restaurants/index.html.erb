@@ -201,19 +201,60 @@
       <i class="fas fa-utensils"></i>
     </div>
     <div class="num_of_rest">
-      <p><%= @selections.count %> Open restaurants</p>
+      <% if @selections.count != 0 %>
+        <p style="color:#5C2976;"><%= @selections.count%> Open restaurants</p>
+      <% else %>
+        <p style="color:#5C2976;"><%= @restaurants.count%> Open restaurants</p>
+      <% end %>
     </div>
   </div>
 
-  <div class="restaurant_cards">
-    <% @selections.each do |selection| %>
-      <%= selection.name %>
-      <%= selection.cuisine %>
-      <%= selection.bio %>
-      <p>Vegan: <%= selection.vegan %></p>
-      <br>
-    <% end %>
-  </div>
+  <% if @selections.count == 0 %>
+
+    <div class="search-failed">
+      <p>Looks like we can't find that.. :/</p>
+    </div>
+
+    <div class="restaurant_cards">
+      <% @restaurants.each do |selection| %>
+        <div class="select-cards">
+          <div class="imagecontainer">
+            <%= image_tag("#{selection.photo}", class: "main-rest-image") %>
+          </div>
+          <div class="lower-select-card container">
+            <div class="firstrow">
+              <p><%= selection.name %></p>
+            </div>
+            <div class="secondrow">
+              <p> <%= selection.cuisine %>
+               - <%= selection.vegan %></p>
+            </div>
+          </div>
+        </div>
+        <br>
+      <% end %>
+    </div>
+  <% else %>
+    <div class="restaurant_cards">
+      <% @selections.each do |selection| %>
+        <div class="select-cards">
+          <div class="imagecontainer">
+            <%= image_tag("#{selection.photo}", class: "main-rest-image") %>
+          </div>
+          <div class="lower-select-card container">
+            <div class="firstrow">
+              <p><%= selection.name %></p>
+            </div>
+            <div class="secondrow">
+              <p> <%= selection.cuisine %>
+               - <%= selection.vegan %></p>
+            </div>
+          </div>
+        </div>
+        <br>
+      <% end %>
+    </div>
+  <% end %>
 </div>
 
 
