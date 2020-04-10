@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(version: 2020_03_26_084150) do
   end
 
   create_table "restaurants", force: :cascade do |t|
+    t.string "photo"
     t.string "name"
     t.text "bio"
     t.string "address"

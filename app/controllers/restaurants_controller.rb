@@ -28,19 +28,15 @@ class RestaurantsController < ApplicationController
     @restaurant = Restaurant.find(params[:id])
   end
 
+  def new
+    @restaurant = Restaurant.new
+  end
+
   def create
     @restaurant = Restaurant.new(new_rest_params)
     @restaurant.save
   end
 
-  def edit
-  end
-
-  def update
-  end
-
-  def destroy
-  end
 
   private
 
