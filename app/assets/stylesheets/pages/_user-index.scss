@@ -153,6 +153,58 @@
   background-size: cover;
 }
 
+.search-failed {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  height: 15vh;
+  p {
+    font-size: 4.5vw;
+    opacity: 0.6;
+  }
+}
+
+.restaurant_cards {
+  display:flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.select-cards {
+  height: 30vh;
+  width: 87vw;
+  box-shadow: 2px 2px 2px 2px rgba(0,0,0,0.2);
+   border-radius: 7px 7px 7px 7px;
+}
+
+.imagecontainer {
+  height: 55%;
+  width: 100%;
+}
+
+.main-rest-image {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 7px 7px 0px 0px;
+}
+
+.firstrow {
+  p {
+    text-decoration: underline;
+    font-size: 5vw;
+    margin-bottom:3px;
+  }
+}
+.secondrow {
+  p {
+    opacity: 0.65;
+    color: #5C2976;
+  }
+}
 
 
 
