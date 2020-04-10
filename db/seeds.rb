@@ -8,21 +8,242 @@
 require 'faker'
 
 puts "Removing all restaurants"
-
 Restaurant.all.delete('')
+puts "creating all restaurants"
 
-15.times do
-  Restaurant.create({
-    name: Faker::Restaurant.name,
-    address: Faker::Address.street_address,
-    cuisine: Faker::Restaurant.type,
-    bio: Faker::Restaurant.description,
-    vegan: ['veggie', 'vegan'].sample
-  })
-  puts "#{Restaurant.name} has been created"
+Restaurant.create({
+  photo: "https://picsum.photos/200/300",
+  name: Faker::Restaurant.name,
+  address: Faker::Address.street_address,
+  cuisine: Faker::Restaurant.type,
+  bio: Faker::Restaurant.description,
+  vegan: ['veggie', 'vegan'].sample
+})
+
+puts "created restaurant called #{Restaurant.last.name}"
+sleep(3)
+
+
+Restaurant.create({
+  photo: "https://picsum.photos/200/300",
+  name: Faker::Restaurant.name,
+  address: Faker::Address.street_address,
+  cuisine: Faker::Restaurant.type,
+  bio: Faker::Restaurant.description,
+  vegan: ['veggie', 'vegan'].sample
+})
+
+puts "created restaurant called #{Restaurant.last.name}"
+sleep(3)
+
+Restaurant.create({
+  photo: "https://picsum.photos/200/300",
+  name: Faker::Restaurant.name,
+  address: Faker::Address.street_address,
+  cuisine: Faker::Restaurant.type,
+  bio: Faker::Restaurant.description,
+  vegan: ['veggie', 'vegan'].sample
+})
+
+puts "created restaurant called #{Restaurant.last.name}"
+sleep(3)
+
+Restaurant.create({
+  photo: "https://picsum.photos/200/300",
+  name: Faker::Restaurant.name,
+  address: Faker::Address.street_address,
+  cuisine: Faker::Restaurant.type,
+  bio: Faker::Restaurant.description,
+  vegan: ['veggie', 'vegan'].sample
+})
+
+puts "created restaurant called #{Restaurant.last.name}"
+sleep(3)
+
+Restaurant.create({
+  photo: "https://picsum.photos/200/300",
+  name: Faker::Restaurant.name,
+  address: Faker::Address.street_address,
+  cuisine: Faker::Restaurant.type,
+  bio: Faker::Restaurant.description,
+  vegan: ['veggie', 'vegan'].sample
+})
+
+puts "created restaurant called #{Restaurant.last.name}"
+sleep(3)
+
+Restaurant.create({
+  photo: "https://picsum.photos/200/300",
+  name: Faker::Restaurant.name,
+  address: Faker::Address.street_address,
+  cuisine: Faker::Restaurant.type,
+  bio: Faker::Restaurant.description,
+  vegan: ['veggie', 'vegan'].sample
+})
+
+puts "created restaurant called #{Restaurant.last.name}"
+sleep(3)
+
+Restaurant.create({
+  photo: "https://picsum.photos/200/300",
+  name: Faker::Restaurant.name,
+  address: Faker::Address.street_address,
+  cuisine: Faker::Restaurant.type,
+  bio: Faker::Restaurant.description,
+  vegan: ['veggie', 'vegan'].sample
+})
+
+puts "created restaurant called #{Restaurant.last.name}"
+sleep(3)
+
+Restaurant.create({
+  photo: "https://picsum.photos/200/300",
+  name: Faker::Restaurant.name,
+  address: Faker::Address.street_address,
+  cuisine: Faker::Restaurant.type,
+  bio: Faker::Restaurant.description,
+  vegan: ['veggie', 'vegan'].sample
+})
+
+puts "created restaurant called #{Restaurant.last.name}"
+sleep(3)
+
+Restaurant.create({
+  photo: "https://picsum.photos/200/300",
+  name: Faker::Restaurant.name,
+  address: Faker::Address.street_address,
+  cuisine: Faker::Restaurant.type,
+  bio: Faker::Restaurant.description,
+  vegan: ['veggie', 'vegan'].sample
+})
+
+puts "created restaurant called #{Restaurant.last.name}"
+sleep(3)
+
+Restaurant.create({
+  photo: "https://picsum.photos/200/300",
+  name: Faker::Restaurant.name,
+  address: Faker::Address.street_address,
+  cuisine: Faker::Restaurant.type,
+  bio: Faker::Restaurant.description,
+  vegan: ['veggie', 'vegan'].sample
+})
+
+puts "created restaurant called #{Restaurant.last.name}"
+sleep(3)
+
+Restaurant.create({
+  photo: "https://picsum.photos/200/300",
+  name: Faker::Restaurant.name,
+  address: Faker::Address.street_address,
+  cuisine: Faker::Restaurant.type,
+  bio: Faker::Restaurant.description,
+  vegan: ['veggie', 'vegan'].sample
+})
+
+puts "created restaurant called #{Restaurant.last.name}"
+sleep(3)
+
+Restaurant.create({
+  photo: "https://picsum.photos/200/300",
+  name: Faker::Restaurant.name,
+  address: Faker::Address.street_address,
+  cuisine: Faker::Restaurant.type,
+  bio: Faker::Restaurant.description,
+  vegan: ['veggie', 'vegan'].sample
+})
+
+puts "created restaurant called #{Restaurant.last.name}"
+sleep(3)
+
+Restaurant.create({
+  photo: "https://picsum.photos/200/300",
+  name: Faker::Restaurant.name,
+  address: Faker::Address.street_address,
+  cuisine: Faker::Restaurant.type,
+  bio: Faker::Restaurant.description,
+  vegan: ['veggie', 'vegan'].sample
+})
+
+puts "created restaurant called #{Restaurant.last.name}"
+sleep(3)
+
+Restaurant.create({
+  photo: "https://picsum.photos/200/300",
+  name: Faker::Restaurant.name,
+  address: Faker::Address.street_address,
+  cuisine: Faker::Restaurant.type,
+  bio: Faker::Restaurant.description,
+  vegan: ['veggie', 'vegan'].sample
+})
+
+puts "created restaurant called #{Restaurant.last.name}"
+sleep(3)
+
+Restaurant.create({
+  photo: "",
+  name: Faker::Restaurant.name,
+  address: Faker::Address.street_address,
+  cuisine: Faker::Restaurant.type,
+  bio: Faker::Restaurant.description,
+  vegan: ['veggie', 'vegan'].sample
+})
+
+puts "created restaurant called #{Restaurant.last.name}"
+sleep(3)
+
+Restaurant.create({
+  photo: "https://picsum.photos/200/300",
+  name: Faker::Restaurant.name,
+  address: Faker::Address.street_address,
+  cuisine: Faker::Restaurant.type,
+  bio: Faker::Restaurant.description,
+  vegan: ['veggie', 'vegan'].sample
+})
+
+puts "created restaurant called #{Restaurant.last.name}"
+sleep(3)
+
+Restaurant.create({
+  photo: "https://picsum.photos/200/300",
+  name: Faker::Restaurant.name,
+  address: Faker::Address.street_address,
+  cuisine: Faker::Restaurant.type,
+  bio: Faker::Restaurant.description,
+  vegan: ['veggie', 'vegan'].sample
+})
+
+puts "created restaurant called #{Restaurant.last.name}"
+puts "created all restaurant seed"
+
+sleep(0.1)
+puts "."
+sleep(0.1)
+puts "."
+sleep(0.1)
+puts "."
+sleep(0.1)
+puts "."
+sleep(0.1)
+puts "."
+sleep(0.1)
+puts "."
+sleep(0.1)
+puts "."
+sleep(0.1)
+puts "."
+sleep(0.1)
+puts "."
+sleep(0.1)
+puts "."
+
+puts "checking geolocation"
+
+sleep(0.1)
+
+Restaurant.all.each do |restaurant|
+  puts "#{restaurant.address}"
 end
-
-
 
 
 
