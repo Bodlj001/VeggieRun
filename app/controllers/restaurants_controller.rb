@@ -25,6 +25,7 @@ class RestaurantsController < ApplicationController
 
   def show
     @restaurant = Restaurant.find(params[:id])
+    @items = MenuItem.where(restaurant_id: params[:id])
     authorize @restaurant
   end
 
