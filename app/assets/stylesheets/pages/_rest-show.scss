@@ -1,5 +1,5 @@
 .carousel-inner {
-  height: 40vh;
+  height: 34vh;
   width: 100%;
 }
 
@@ -32,4 +32,15 @@
 
 .show_title {
   text-decoration: underline;
+}
+
+.bg_space {
+  background-color: white;
+}
+
+.card-product-infos{
+  p {
+    margin-bottom:0px;
+    padding-bottom: 10px;
+  }
 }

@@ -93,4 +93,37 @@
   </div>
 </div>
 
+<% @items.each do |item| %>
+  <div class="bg_space">
+    <div class="container">
+      <div class="card-product">
+        <img src="" />
+        <div class="card-product-infos">
+          <h2><%= item.dish_name %></h2>
+          <p><%= item.description %></p>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

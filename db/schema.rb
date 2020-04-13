@@ -10,13 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_26_084150) do
+ActiveRecord::Schema.define(version: 2020_04_12_121621) do
 
   # These are extensions that must be enabled in order to support this database
+  enable_extension "hstore"
   enable_extension "plpgsql"
 
   create_table "meals", force: :cascade do |t|
     t.string "order"
+    t.string "hstore"
     t.datetime "time"
     t.integer "price"
     t.bigint "restaurants_id", null: false
@@ -25,6 +27,17 @@ ActiveRecord::Schema.define(version: 2020_03_26_084150) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["restaurants_id"], name: "index_meals_on_restaurants_id"
     t.index ["users_id"], name: "index_meals_on_users_id"
+  end
+
+  create_table "menu_items", force: :cascade do |t|
+    t.string "dish_name"
+    t.string "description"
+    t.integer "price"
+    t.integer "calories"
+    t.bigint "restaurant_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["restaurant_id"], name: "index_menu_items_on_restaurant_id"
   end
 
   create_table "restaurants", force: :cascade do |t|
@@ -59,4 +72,5 @@ ActiveRecord::Schema.define(version: 2020_03_26_084150) do
 
   add_foreign_key "meals", "restaurants", column: "restaurants_id"
   add_foreign_key "meals", "users", column: "users_id"
+  add_foreign_key "menu_items", "restaurants"
 end

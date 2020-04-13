@@ -23,6 +23,19 @@ Restaurant.create({
 puts "created restaurant called #{Restaurant.last.name}"
 sleep(3)
 
+puts "populating Menu"
+
+20.times do
+  MenuItem.create({
+    dish_name: Faker::Food.dish,
+    description: Faker::Food.description,
+    price: (5...30).to_a.sample,
+    restaurant_id: Restaurant.last.id
+  })
+  sleep(1)
+  puts "#{MenuItem.last.dish_name} added to #{Restaurant.last.name}"
+end
+
 
 Restaurant.create({
   photo: "https://images.unsplash.com/photo-1565494490966-4b5088bcd0ca?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
@@ -33,8 +46,21 @@ Restaurant.create({
   vegan: ['veggie', 'vegan'].sample
 })
 
+
+
 puts "created restaurant called #{Restaurant.last.name}"
 sleep(3)
+
+20.times do
+  MenuItem.create({
+    dish_name: Faker::Food.dish,
+    description: Faker::Food.description,
+    price: (5...30).to_a.sample,
+    restaurant_id: Restaurant.last.id
+  })
+  sleep(1)
+  puts "#{MenuItem.last.dish_name} added to #{Restaurant.last.name}"
+end
 
 Restaurant.create({
   photo: "https://images.unsplash.com/photo-1584283367830-626868ac1dd3?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
@@ -48,6 +74,17 @@ Restaurant.create({
 puts "created restaurant called #{Restaurant.last.name}"
 sleep(3)
 
+20.times do
+  MenuItem.create({
+    dish_name: Faker::Food.dish,
+    description: Faker::Food.description,
+    price: (5...30).to_a.sample,
+    restaurant_id: Restaurant.last.id
+  })
+  sleep(1)
+  puts "#{MenuItem.last.dish_name} added to #{Restaurant.last.name}"
+end
+
 Restaurant.create({
   photo: "https://images.unsplash.com/photo-1521845455419-eac340fdbbed?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
   name: Faker::Restaurant.name,
@@ -59,6 +96,17 @@ Restaurant.create({
 
 puts "created restaurant called #{Restaurant.last.name}"
 sleep(3)
+
+20.times do
+  MenuItem.create({
+    dish_name: Faker::Food.dish,
+    description: Faker::Food.description,
+    price: (5...30).to_a.sample,
+    restaurant_id: Restaurant.last.id
+  })
+  sleep(1)
+  puts "#{MenuItem.last.dish_name} added to #{Restaurant.last.name}"
+end
 
 Restaurant.create({
   photo: "https://images.unsplash.com/photo-1568475064736-29d7fbd49c39?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
@@ -72,6 +120,17 @@ Restaurant.create({
 puts "created restaurant called #{Restaurant.last.name}"
 sleep(3)
 
+20.times do
+  MenuItem.create({
+    dish_name: Faker::Food.dish,
+    description: Faker::Food.description,
+    price: (5...30).to_a.sample,
+    restaurant_id: Restaurant.last.id
+  })
+  sleep(1)
+  puts "#{MenuItem.last.dish_name} added to #{Restaurant.last.name}"
+end
+
 Restaurant.create({
   photo: "https://images.unsplash.com/photo-1528696353932-be229661fd48?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
   name: Faker::Restaurant.name,
@@ -83,6 +142,17 @@ Restaurant.create({
 
 puts "created restaurant called #{Restaurant.last.name}"
 sleep(3)
+
+20.times do
+  MenuItem.create({
+    dish_name: Faker::Food.dish,
+    description: Faker::Food.description,
+    price: (5...30).to_a.sample,
+    restaurant_id: Restaurant.last.id
+  })
+  sleep(1)
+  puts "#{MenuItem.last.dish_name} added to #{Restaurant.last.name}"
+end
 
 Restaurant.create({
   photo: "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
@@ -96,6 +166,17 @@ Restaurant.create({
 puts "created restaurant called #{Restaurant.last.name}"
 sleep(3)
 
+20.times do
+  MenuItem.create({
+    dish_name: Faker::Food.dish,
+    description: Faker::Food.description,
+    price: (5...30).to_a.sample,
+    restaurant_id: Restaurant.last.id
+  })
+  sleep(1)
+  puts "#{MenuItem.last.dish_name} added to #{Restaurant.last.name}"
+end
+
 Restaurant.create({
   photo: "https://images.unsplash.com/photo-1585672840563-f2af2ced55c9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
   name: Faker::Restaurant.name,
@@ -108,6 +189,17 @@ Restaurant.create({
 puts "created restaurant called #{Restaurant.last.name}"
 sleep(3)
 
+20.times do
+  MenuItem.create({
+    dish_name: Faker::Food.dish,
+    description: Faker::Food.description,
+    price: (5...30).to_a.sample,
+    restaurant_id: Restaurant.last.id
+  })
+  sleep(1)
+  puts "#{MenuItem.last.dish_name} added to #{Restaurant.last.name}"
+end
+
 Restaurant.create({
   photo: "https://images.unsplash.com/photo-1493770348161-369560ae357d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
   name: Faker::Restaurant.name,
@@ -117,8 +209,20 @@ Restaurant.create({
   vegan: ['veggie', 'vegan'].sample
 })
 
+
 puts "created restaurant called #{Restaurant.last.name}"
 sleep(3)
+
+20.times do
+  MenuItem.create({
+    dish_name: Faker::Food.dish,
+    description: Faker::Food.description,
+    price: (5...30).to_a.sample,
+    restaurant_id: Restaurant.last.id
+  })
+  sleep(1)
+  puts "#{MenuItem.last.dish_name} added to #{Restaurant.last.name}"
+end
 
 Restaurant.create({
   photo: "https://images.unsplash.com/photo-1583197576670-6c6f352877a6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
@@ -132,6 +236,17 @@ Restaurant.create({
 puts "created restaurant called #{Restaurant.last.name}"
 sleep(3)
 
+20.times do
+  MenuItem.create({
+    dish_name: Faker::Food.dish,
+    description: Faker::Food.description,
+    price: (5...30).to_a.sample,
+    restaurant_id: Restaurant.last.id
+  })
+  sleep(1)
+  puts "#{MenuItem.last.dish_name} added to #{Restaurant.last.name}"
+end
+
 Restaurant.create({
   photo: "https://images.unsplash.com/photo-1544510807-d0289d40b17c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
   name: Faker::Restaurant.name,
@@ -143,6 +258,17 @@ Restaurant.create({
 
 puts "created restaurant called #{Restaurant.last.name}"
 sleep(3)
+
+20.times do
+  MenuItem.create({
+    dish_name: Faker::Food.dish,
+    description: Faker::Food.description,
+    price: (5...30).to_a.sample,
+    restaurant_id: Restaurant.last.id
+  })
+  sleep(1)
+  puts "#{MenuItem.last.dish_name} added to #{Restaurant.last.name}"
+end
 
 Restaurant.create({
   photo: "https://images.unsplash.com/photo-1524859880053-f595797051c2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
@@ -156,6 +282,17 @@ Restaurant.create({
 puts "created restaurant called #{Restaurant.last.name}"
 sleep(3)
 
+20.times do
+  MenuItem.create({
+    dish_name: Faker::Food.dish,
+    description: Faker::Food.description,
+    price: (5...30).to_a.sample,
+    restaurant_id: Restaurant.last.id
+  })
+  sleep(1)
+  puts "#{MenuItem.last.dish_name} added to #{Restaurant.last.name}"
+end
+
 Restaurant.create({
   photo: "https://images.unsplash.com/photo-1508900138639-8d3ff3f49d78?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
   name: Faker::Restaurant.name,
@@ -167,6 +304,17 @@ Restaurant.create({
 
 puts "created restaurant called #{Restaurant.last.name}"
 sleep(3)
+
+20.times do
+  MenuItem.create({
+    dish_name: Faker::Food.dish,
+    description: Faker::Food.description,
+    price: (5...30).to_a.sample,
+    restaurant_id: Restaurant.last.id
+  })
+  sleep(1)
+  puts "#{MenuItem.last.dish_name} added to #{Restaurant.last.name}"
+end
 
 Restaurant.create({
   photo: "https://images.unsplash.com/photo-1530990457142-bb18a441c52b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
@@ -180,6 +328,17 @@ Restaurant.create({
 puts "created restaurant called #{Restaurant.last.name}"
 sleep(3)
 
+20.times do
+  MenuItem.create({
+    dish_name: Faker::Food.dish,
+    description: Faker::Food.description,
+    price: (5...30).to_a.sample,
+    restaurant_id: Restaurant.last.id
+  })
+  sleep(1)
+  puts "#{MenuItem.last.dish_name} added to #{Restaurant.last.name}"
+end
+
 Restaurant.create({
   photo: "https://images.unsplash.com/photo-1544510806-07b18f692386?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
   name: Faker::Restaurant.name,
@@ -191,6 +350,17 @@ Restaurant.create({
 
 puts "created restaurant called #{Restaurant.last.name}"
 sleep(3)
+
+20.times do
+  MenuItem.create({
+    dish_name: Faker::Food.dish,
+    description: Faker::Food.description,
+    price: (5...30).to_a.sample,
+    restaurant_id: Restaurant.last.id
+  })
+  sleep(1)
+  puts "#{MenuItem.last.dish_name} added to #{Restaurant.last.name}"
+end
 
 Restaurant.create({
   photo: "https://images.unsplash.com/photo-1554998171-89445e31c52b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
@@ -204,6 +374,17 @@ Restaurant.create({
 puts "created restaurant called #{Restaurant.last.name}"
 sleep(3)
 
+20.times do
+  MenuItem.create({
+    dish_name: Faker::Food.dish,
+    description: Faker::Food.description,
+    price: (5...30).to_a.sample,
+    restaurant_id: Restaurant.last.id
+  })
+  sleep(1)
+  puts "#{MenuItem.last.dish_name} added to #{Restaurant.last.name}"
+end
+
 Restaurant.create({
   photo: "https://images.unsplash.com/photo-1520066391310-428f06ebd602?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
   name: Faker::Restaurant.name,
@@ -214,6 +395,17 @@ Restaurant.create({
 })
 
 puts "created restaurant called #{Restaurant.last.name}"
+
+20.times do
+  MenuItem.create({
+    dish_name: Faker::Food.dish,
+    description: Faker::Food.description,
+    price: (5...30).to_a.sample,
+    restaurant_id: Restaurant.last.id
+  })
+  sleep(1)
+  puts "#{MenuItem.last.dish_name} added to #{Restaurant.last.name}"
+end
 puts "created all restaurant seed"
 
 sleep(0.1)
