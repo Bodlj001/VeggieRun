@@ -1,191 +1,171 @@
 <%= render 'shared/navbar' %>
 
-<div class="container-fluid">
-  <div class="row">
-    <div class="col-sm" style="height:50px;">
-      <div class="flexy">
-        <div class="user_location">
-          <%= image_tag('pin.png', class: "pin_icon") %>
-          <%= @little_address %>
-        </div>
-        <%= link_to "Change Location", root_path, class: "change_location" %>
-      </div>
-    </div>
-  </div>
+<div class="all">
 
-  <div class="search-form">
-    <%= form_tag restaurants_path, method: :get do %>
-      <div class="display-flex">
-        <div class="flex">
-          <div class="parent_stick">
-            <%= text_field_tag :query, params[:query], class: "rest-search", placeholder: "Find a meal" %>
-            <% if params[:query] %>
-              <%= hidden_field_tag :address, params[:address], value: params[:address] %>
-            <% else %>
-              <%= hidden_field_tag :address, params[:address], value: params[:restaurant][:address] %>
-            <% end %>
-            <%= hidden_field_tag :query2, params[:query2], value: "" %>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm" style="height:50px;">
+        <div class="flexy">
+          <div class="user_location">
+            <%= image_tag('pin.png', class: "pin_icon") %>
+            <%= @little_address %>
           </div>
-          <div class="stick">
-            <%= button_tag(type: "submit", class: "sherlock-search") do %>
-              <i class='fas fa-search'></i>
-            <% end %>
-          </div>
+          <%= link_to "Change Location", root_path, class: "change_location" %>
         </div>
       </div>
-    <% end %>
-  </div>
-
-  <div class="row">
-    <div class="col-sm-12 cardsdis">
-
-      <%= form_tag restaurants_path, method: :get do %>
-        <%= hidden_field_tag :query2, params[:query2], value: 'pizza' %>
-        <%= hidden_field_tag :query, params[:query], value: params[:query] %>
-        <% if params[:query] %>
-          <%= hidden_field_tag :address, params[:address], value: params[:address] %>
-        <% else %>
-          <%= hidden_field_tag :address, params[:address], value: params[:restaurant][:address] %>
-        <% end %>
-        <%= button_tag(type: "submit", class: "panel") do %>
-          <div class="selectcard" id="pizza-select-card">
-            <div class="little-card-text">
-              Pizza
-            </div>
-          </div>
-        <% end %>
-      <% end %>
-
-      <%= form_tag restaurants_path, method: :get do %>
-        <%= hidden_field_tag :query2, params[:query2], value: 'vegan' %>
-        <%= hidden_field_tag :query, params[:query], value: params[:query] %>
-        <% if params[:query] %>
-          <%= hidden_field_tag :address, params[:address], value: params[:address] %>
-        <% else %>
-          <%= hidden_field_tag :address, params[:address], value: params[:restaurant][:address] %>
-        <% end %>
-        <%= button_tag(type: "submit", class: "panel") do %>
-          <div class="selectcard" id="vegan-select-card">
-            <div class="little-card-text">
-              Vegan
-            </div>
-          </div>
-        <% end %>
-      <% end %>
-
-      <%= form_tag restaurants_path, method: :get do %>
-        <%= hidden_field_tag :query2, params[:query2], value: 'burger' %>
-        <%= hidden_field_tag :query, params[:query], value: params[:query] %>
-        <% if params[:query] %>
-          <%= hidden_field_tag :address, params[:address], value: params[:address] %>
-        <% else %>
-          <%= hidden_field_tag :address, params[:address], value: params[:restaurant][:address] %>
-        <% end %>
-        <%= button_tag(type: "submit", class: "panel") do %>
-          <div class="selectcard" id="burger-select-card">
-            <div class="little-card-text">
-              Burger
-            </div>
-          </div>
-        <% end %>
-      <% end %>
-
-      <%= form_tag restaurants_path, method: :get do %>
-        <%= hidden_field_tag :query2, params[:query2], value: 'curry' %>
-        <%= hidden_field_tag :query, params[:query], value: params[:query] %>
-        <% if params[:query] %>
-          <%= hidden_field_tag :address, params[:address], value: params[:address] %>
-        <% else %>
-          <%= hidden_field_tag :address, params[:address], value: params[:restaurant][:address] %>
-        <% end %>
-        <%= button_tag(type: "submit", class: "panel") do %>
-          <div class="selectcard" id="curry-select-card">
-            <div class="little-card-text">
-              Curry
-            </div>
-          </div>
-        <% end %>
-      <% end %>
-
-      <%= form_tag restaurants_path, method: :get do %>
-        <%= hidden_field_tag :query2, params[:query2], value: 'dessert' %>
-        <%= hidden_field_tag :query, params[:query], value: params[:query] %>
-        <% if params[:query] %>
-          <%= hidden_field_tag :address, params[:address], value: params[:address] %>
-        <% else %>
-          <%= hidden_field_tag :address, params[:address], value: params[:restaurant][:address] %>
-        <% end %>
-        <%= button_tag(type: "submit", class: "panel") do %>
-          <div class="selectcard" id="dessert-select-card">
-            <div class="little-card-text">
-              Dessert
-            </div>
-          </div>
-        <% end %>
-      <% end %>
-
-      <%= form_tag restaurants_path, method: :get do %>
-        <%= hidden_field_tag :query2, params[:query2], value: 'veggie' %>
-        <%= hidden_field_tag :query, params[:query], value: params[:query] %>
-        <% if params[:query] %>
-          <%= hidden_field_tag :address, params[:address], value: params[:address] %>
-        <% else %>
-          <%= hidden_field_tag :address, params[:address], value: params[:restaurant][:address] %>
-        <% end %>
-        <%= button_tag(type: "submit", class: "panel") do %>
-          <div class="selectcard" id="veggie-select-card">
-            <div class="little-card-text">
-              Veggie
-            </div>
-          </div>
-        <% end %>
-      <% end %>
-    </div>
-  </div>
-
-  <div class="avalible-rest">
-    <div class="rest_icon">
-      <i class="fas fa-utensils"></i>
-    </div>
-    <div class="num_of_rest">
-      <% if @selections.count != 0 %>
-        <p style="color:#5C2976;"><%= @selections.count%> Open restaurants</p>
-      <% else %>
-        <p style="color:#5C2976;"><%= @restaurants.count%> Open restaurants</p>
-      <% end %>
-    </div>
-  </div>
-
-  <% if @selections.count == 0 %>
-
-    <div class="search-failed">
-      <p>Looks like we can't find that.. :/</p>
     </div>
 
-    <div class="restaurant_cards">
-      <% @restaurants.each do |selection| %>
-        <div class="select-cards">
-          <div class="imagecontainer">
-            <%= image_tag("#{selection.photo}", class: "main-rest-image") %>
-          </div>
-          <div class="lower-select-card container">
-            <div class="firstrow">
-              <p><%= selection.name %></p>
+    <div class="search-form">
+      <%= form_tag restaurants_path, method: :get do %>
+        <div class="display-flex">
+          <div class="flex">
+            <div class="parent_stick">
+              <%= text_field_tag :query, params[:query], class: "rest-search", placeholder: "Find a meal" %>
+              <% if params[:query] %>
+                <%= hidden_field_tag :address, params[:address], value: params[:address] %>
+              <% else %>
+                <%= hidden_field_tag :address, params[:address], value: params[:restaurant][:address] %>
+              <% end %>
+              <%= hidden_field_tag :query2, params[:query2], value: "" %>
             </div>
-            <div class="secondrow">
-              <p> <%= selection.cuisine %>
-               - <%= selection.vegan %></p>
+            <div class="stick">
+              <%= button_tag(type: "submit", class: "sherlock-search") do %>
+                <i class='fas fa-search'></i>
+              <% end %>
             </div>
           </div>
         </div>
-        <br>
       <% end %>
     </div>
-  <% else %>
-    <div class="restaurant_cards">
 
-      <% @selections.each do |selection| %>
-        <%= link_to restaurant_path(selection.id) do %>
+    <div class="row">
+      <div class="col-sm-12 cardsdis">
+
+        <%= form_tag restaurants_path, method: :get do %>
+          <%= hidden_field_tag :query2, params[:query2], value: 'pizza' %>
+          <%= hidden_field_tag :query, params[:query], value: params[:query] %>
+          <% if params[:query] %>
+            <%= hidden_field_tag :address, params[:address], value: params[:address] %>
+          <% else %>
+            <%= hidden_field_tag :address, params[:address], value: params[:restaurant][:address] %>
+          <% end %>
+          <%= button_tag(type: "submit", class: "panel") do %>
+            <div class="selectcard" id="pizza-select-card">
+              <div class="little-card-text">
+                Pizza
+              </div>
+            </div>
+          <% end %>
+        <% end %>
+
+        <%= form_tag restaurants_path, method: :get do %>
+          <%= hidden_field_tag :query2, params[:query2], value: 'vegan' %>
+          <%= hidden_field_tag :query, params[:query], value: params[:query] %>
+          <% if params[:query] %>
+            <%= hidden_field_tag :address, params[:address], value: params[:address] %>
+          <% else %>
+            <%= hidden_field_tag :address, params[:address], value: params[:restaurant][:address] %>
+          <% end %>
+          <%= button_tag(type: "submit", class: "panel") do %>
+            <div class="selectcard" id="vegan-select-card">
+              <div class="little-card-text">
+                Vegan
+              </div>
+            </div>
+          <% end %>
+        <% end %>
+
+        <%= form_tag restaurants_path, method: :get do %>
+          <%= hidden_field_tag :query2, params[:query2], value: 'burger' %>
+          <%= hidden_field_tag :query, params[:query], value: params[:query] %>
+          <% if params[:query] %>
+            <%= hidden_field_tag :address, params[:address], value: params[:address] %>
+          <% else %>
+            <%= hidden_field_tag :address, params[:address], value: params[:restaurant][:address] %>
+          <% end %>
+          <%= button_tag(type: "submit", class: "panel") do %>
+            <div class="selectcard" id="burger-select-card">
+              <div class="little-card-text">
+                Burger
+              </div>
+            </div>
+          <% end %>
+        <% end %>
+
+        <%= form_tag restaurants_path, method: :get do %>
+          <%= hidden_field_tag :query2, params[:query2], value: 'curry' %>
+          <%= hidden_field_tag :query, params[:query], value: params[:query] %>
+          <% if params[:query] %>
+            <%= hidden_field_tag :address, params[:address], value: params[:address] %>
+          <% else %>
+            <%= hidden_field_tag :address, params[:address], value: params[:restaurant][:address] %>
+          <% end %>
+          <%= button_tag(type: "submit", class: "panel") do %>
+            <div class="selectcard" id="curry-select-card">
+              <div class="little-card-text">
+                Curry
+              </div>
+            </div>
+          <% end %>
+        <% end %>
+
+        <%= form_tag restaurants_path, method: :get do %>
+          <%= hidden_field_tag :query2, params[:query2], value: 'dessert' %>
+          <%= hidden_field_tag :query, params[:query], value: params[:query] %>
+          <% if params[:query] %>
+            <%= hidden_field_tag :address, params[:address], value: params[:address] %>
+          <% else %>
+            <%= hidden_field_tag :address, params[:address], value: params[:restaurant][:address] %>
+          <% end %>
+          <%= button_tag(type: "submit", class: "panel") do %>
+            <div class="selectcard" id="dessert-select-card">
+              <div class="little-card-text">
+                Dessert
+              </div>
+            </div>
+          <% end %>
+        <% end %>
+
+        <%= form_tag restaurants_path, method: :get do %>
+          <%= hidden_field_tag :query2, params[:query2], value: 'veggie' %>
+          <%= hidden_field_tag :query, params[:query], value: params[:query] %>
+          <% if params[:query] %>
+            <%= hidden_field_tag :address, params[:address], value: params[:address] %>
+          <% else %>
+            <%= hidden_field_tag :address, params[:address], value: params[:restaurant][:address] %>
+          <% end %>
+          <%= button_tag(type: "submit", class: "panel") do %>
+            <div class="selectcard" id="veggie-select-card">
+              <div class="little-card-text">
+                Veggie
+              </div>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="avalible-rest">
+      <div class="rest_icon">
+        <i class="fas fa-utensils"></i>
+      </div>
+      <div class="num_of_rest">
+        <% if @selections.count != 0 %>
+          <p style="color:#5C2976;"><%= @selections.count%> Open restaurants</p>
+        <% else %>
+          <p style="color:#5C2976;"><%= @restaurants.count%> Open restaurants</p>
+        <% end %>
+      </div>
+    </div>
+
+    <% if @selections.count == 0 %>
+
+      <div class="search-failed">
+        <p>Looks like we can't find that.. :/</p>
+      </div>
+
+      <div class="restaurant_cards">
+        <% @restaurants.each do |selection| %>
           <div class="select-cards">
             <div class="imagecontainer">
               <%= image_tag("#{selection.photo}", class: "main-rest-image") %>
@@ -202,13 +182,35 @@
           </div>
           <br>
         <% end %>
-      <% end %>
+      </div>
+    <% else %>
+      <div class="restaurant_cards">
 
-    </div>
-  <% end %>
+        <% @selections.each do |selection| %>
+          <%= link_to restaurant_path(selection.id) do %>
+            <div class="select-cards">
+              <div class="imagecontainer">
+                <%= image_tag("#{selection.photo}", class: "main-rest-image") %>
+              </div>
+              <div class="lower-select-card container">
+                <div class="firstrow">
+                  <p><%= selection.name %></p>
+                </div>
+                <div class="secondrow">
+                  <p> <%= selection.cuisine %>
+                   - <%= selection.vegan %></p>
+                </div>
+              </div>
+            </div>
+            <br>
+          <% end %>
+        <% end %>
+
+      </div>
+    <% end %>
+  </div>
+
 </div>
-
-
 
 
 
