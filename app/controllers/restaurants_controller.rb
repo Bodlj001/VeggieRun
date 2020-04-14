@@ -26,6 +26,10 @@ class RestaurantsController < ApplicationController
   def show
     @restaurant = Restaurant.find(params[:id])
     @items = MenuItem.where(restaurant_id: params[:id])
+    @starters = @items.where(mealtype: 'S')
+    @mains = @items.where(mealtype: 'M')
+    @desserts = @items.where(mealtype: 'D')
+
     authorize @restaurant
   end
 

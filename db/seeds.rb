@@ -30,6 +30,7 @@ puts "populating Menu"
     dish_name: Faker::Food.dish,
     description: Faker::Food.description,
     price: (5...30).to_a.sample,
+    mealtype: ["S", "M", "D"].sample,
     restaurant_id: Restaurant.last.id
   })
   sleep(1)
@@ -56,6 +57,7 @@ sleep(3)
     dish_name: Faker::Food.dish,
     description: Faker::Food.description,
     price: (5...30).to_a.sample,
+    mealtype: ["S", "M", "D"].sample,
     restaurant_id: Restaurant.last.id
   })
   sleep(1)
@@ -79,6 +81,7 @@ sleep(3)
     dish_name: Faker::Food.dish,
     description: Faker::Food.description,
     price: (5...30).to_a.sample,
+    mealtype: ["S", "M", "D"].sample,
     restaurant_id: Restaurant.last.id
   })
   sleep(1)
@@ -102,6 +105,7 @@ sleep(3)
     dish_name: Faker::Food.dish,
     description: Faker::Food.description,
     price: (5...30).to_a.sample,
+    mealtype: ["S", "M", "D"].sample,
     restaurant_id: Restaurant.last.id
   })
   sleep(1)
@@ -125,6 +129,7 @@ sleep(3)
     dish_name: Faker::Food.dish,
     description: Faker::Food.description,
     price: (5...30).to_a.sample,
+    mealtype: ["S", "M", "D"].sample,
     restaurant_id: Restaurant.last.id
   })
   sleep(1)
@@ -148,6 +153,7 @@ sleep(3)
     dish_name: Faker::Food.dish,
     description: Faker::Food.description,
     price: (5...30).to_a.sample,
+    mealtype: ["S", "M", "D"].sample,
     restaurant_id: Restaurant.last.id
   })
   sleep(1)
@@ -171,6 +177,7 @@ sleep(3)
     dish_name: Faker::Food.dish,
     description: Faker::Food.description,
     price: (5...30).to_a.sample,
+    mealtype: ["S", "M", "D"].sample,
     restaurant_id: Restaurant.last.id
   })
   sleep(1)
@@ -194,6 +201,7 @@ sleep(3)
     dish_name: Faker::Food.dish,
     description: Faker::Food.description,
     price: (5...30).to_a.sample,
+    mealtype: ["S", "M", "D"].sample,
     restaurant_id: Restaurant.last.id
   })
   sleep(1)
@@ -218,6 +226,7 @@ sleep(3)
     dish_name: Faker::Food.dish,
     description: Faker::Food.description,
     price: (5...30).to_a.sample,
+    mealtype: ["S", "M", "D"].sample,
     restaurant_id: Restaurant.last.id
   })
   sleep(1)
@@ -241,6 +250,7 @@ sleep(3)
     dish_name: Faker::Food.dish,
     description: Faker::Food.description,
     price: (5...30).to_a.sample,
+    mealtype: ["S", "M", "D"].sample,
     restaurant_id: Restaurant.last.id
   })
   sleep(1)
@@ -264,6 +274,7 @@ sleep(3)
     dish_name: Faker::Food.dish,
     description: Faker::Food.description,
     price: (5...30).to_a.sample,
+    mealtype: ["S", "M", "D"].sample,
     restaurant_id: Restaurant.last.id
   })
   sleep(1)
@@ -287,6 +298,7 @@ sleep(3)
     dish_name: Faker::Food.dish,
     description: Faker::Food.description,
     price: (5...30).to_a.sample,
+    mealtype: ["S", "M", "D"].sample,
     restaurant_id: Restaurant.last.id
   })
   sleep(1)
@@ -310,6 +322,7 @@ sleep(3)
     dish_name: Faker::Food.dish,
     description: Faker::Food.description,
     price: (5...30).to_a.sample,
+    mealtype: ["S", "M", "D"].sample,
     restaurant_id: Restaurant.last.id
   })
   sleep(1)
@@ -333,6 +346,7 @@ sleep(3)
     dish_name: Faker::Food.dish,
     description: Faker::Food.description,
     price: (5...30).to_a.sample,
+    mealtype: ["S", "M", "D"].sample,
     restaurant_id: Restaurant.last.id
   })
   sleep(1)
@@ -356,6 +370,7 @@ sleep(3)
     dish_name: Faker::Food.dish,
     description: Faker::Food.description,
     price: (5...30).to_a.sample,
+    mealtype: ["S", "M", "D"].sample,
     restaurant_id: Restaurant.last.id
   })
   sleep(1)
@@ -379,6 +394,7 @@ sleep(3)
     dish_name: Faker::Food.dish,
     description: Faker::Food.description,
     price: (5...30).to_a.sample,
+    mealtype: ["S", "M", "D"].sample,
     restaurant_id: Restaurant.last.id
   })
   sleep(1)
@@ -401,6 +417,7 @@ puts "created restaurant called #{Restaurant.last.name}"
     dish_name: Faker::Food.dish,
     description: Faker::Food.description,
     price: (5...30).to_a.sample,
+    mealtype: ["S", "M", "D"].sample,
     restaurant_id: Restaurant.last.id
   })
   sleep(1)
