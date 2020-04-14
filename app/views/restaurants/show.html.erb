@@ -34,26 +34,72 @@
     <h5 class="about_title">About</h5>
     <%= @restaurant.bio %>
   </div>
-
-  <div class="show_fourthrow">
-    <h5>Menu</h5>
-  </div>
 </div>
 
-<% @items.each do |item| %>
-  <div class="bg_space">
+<div class="bg_space">
+  <div class="show_fourthrow container">
+    <h3 style="margin-bottom:0px;padding-top:10px;text-align:center;">Menu</h3>
+  </div>
+
+  <div class="meal-title container">
+    <h4>Starters</h4>
+  </div>
+
+  <% @starters.each do |item| %>
     <div class="container">
       <div class="card-product">
-        <img src="" />
+        <%= image_tag('928-Simple-King-Prawn-Garlic--Chilli-Linguine.2-x750.jpg', class: "dish_image") %>
         <div class="card-product-infos">
-          <h2><%= item.dish_name %></h2>
+           <div class="price-align" style="display:flex;justify-content:space-between;">
+            <h6><%= item.dish_name %></h6>
+            <p> £<%= item.price %>.00 </p>
+          </div>
           <p><%= item.description %></p>
         </div>
       </div>
     </div>
-  </div>
-<% end %>
+  <% end %>
 
+  <div class="meal-title container">
+    <h4>Mains</h4>
+  </div>
+
+  <% @mains.each do |item| %>
+    <div class="container">
+      <div class="card-product">
+        <%= image_tag('928-Simple-King-Prawn-Garlic--Chilli-Linguine.2-x750.jpg', class: "dish_image") %>
+        <div class="card-product-infos">
+           <div class="price-align" style="display:flex;justify-content:space-between;">
+            <h6><%= item.dish_name %></h6>
+            <p> £<%= item.price %>.00 </p>
+          </div>
+          <p><%= item.description %></p>
+        </div>
+      </div>
+    </div>
+  <% end %>
+
+
+  <div class="meal-title container">
+    <h4>Desserts</h4>
+  </div>
+
+  <% @desserts.each do |item| %>
+    <div class="container">
+      <div class="card-product">
+        <%= image_tag('928-Simple-King-Prawn-Garlic--Chilli-Linguine.2-x750.jpg', class: "dish_image") %>
+        <div class="card-product-infos">
+          <div class="price-align" style="display:flex;justify-content:space-between;">
+            <h6><%= item.dish_name %></h6>
+            <p> £<%= item.price %>.00 </p>
+          </div>
+          <p><%= item.description %></p>
+        </div>
+      </div>
+    </div>
+  <% end %>
+
+</div>
 
 
 
