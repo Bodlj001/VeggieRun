@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_12_121621) do
+ActiveRecord::Schema.define(version: 2020_04_15_100622) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "hstore"
@@ -39,6 +39,15 @@ ActiveRecord::Schema.define(version: 2020_04_12_121621) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["restaurant_id"], name: "index_menu_items_on_restaurant_id"
+  end
+
+  create_table "options", force: :cascade do |t|
+    t.string "description"
+    t.integer "price"
+    t.bigint "menu_item_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["menu_item_id"], name: "index_options_on_menu_item_id"
   end
 
   create_table "restaurants", force: :cascade do |t|
@@ -74,4 +83,5 @@ ActiveRecord::Schema.define(version: 2020_04_12_121621) do
   add_foreign_key "meals", "restaurants", column: "restaurants_id"
   add_foreign_key "meals", "users", column: "users_id"
   add_foreign_key "menu_items", "restaurants"
+  add_foreign_key "options", "menu_items"
 end
