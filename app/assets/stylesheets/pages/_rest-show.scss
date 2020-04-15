@@ -82,8 +82,40 @@
   }
 }
 
+.footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: sticky;
+  bottom: 0;
+  min-height: 55px;
+  width: 100%;
+  background-color: white;
+  border-top: solid 1px rgba(0,0,0,0.2);
+  z-index: 999;
+  button {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: solid 3px #a82de7;
+    outline: none;
+    &:focus {
 
+    }
+  }
+  i {
+    font-size:20px;
+    color: #61ED38;
+  }
+}
 
+.buttone {
+
+}
+
+.collapse {
+  flex-grow: auto;
+}
 
 
 
