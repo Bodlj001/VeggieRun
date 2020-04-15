@@ -166,21 +166,28 @@
 
       <div class="restaurant_cards">
         <% @restaurants.each do |selection| %>
-          <%= link_to restaurant_path(selection.id) do %>
-            <div class="select-cards">
-              <div class="imagecontainer">
-                <%= image_tag("#{selection.photo}", class: "main-rest-image") %>
-              </div>
-              <div class="lower-select-card container">
-                <div class="firstrow">
-                  <p><%= selection.name %></p>
+          <%= form_tag restaurant_path(selection.id), method: :get do %>
+            <% if params[:query] %>
+              <%= hidden_field_tag :address, params[:address], value: params[:address] %>
+            <% else %>
+              <%= hidden_field_tag :address, params[:address], value: params[:restaurant][:address] %>
+            <% end %>
+            <%= button_tag(type: "submit", class: "") do %>
+              <div class="select-cards">
+                <div class="imagecontainer">
+                  <%= image_tag("#{selection.photo}", class: "main-rest-image") %>
                 </div>
-                <div class="secondrow">
-                  <p> <%= selection.cuisine %>
-                   - <%= selection.vegan %></p>
+                <div class="lower-select-card container">
+                  <div class="firstrow">
+                    <p><%= selection.name %></p>
+                  </div>
+                  <div class="secondrow">
+                    <p> <%= selection.cuisine %>
+                     - <%= selection.vegan %></p>
+                  </div>
                 </div>
               </div>
-            </div>
+            <% end %>
           <% end %>
           <br>
         <% end %>
@@ -189,29 +196,34 @@
 
       <div class="restaurant_cards">
         <% @selections.each do |selection| %>
-          <%= link_to restaurant_path(selection.id) do %>
-            <div class="select-cards">
-              <div class="imagecontainer">
-                <%= image_tag("#{selection.photo}", class: "main-rest-image") %>
-              </div>
-              <div class="lower-select-card container">
-                <div class="firstrow">
-                  <p><%= selection.name %></p>
+          <%= form_tag restaurant_path(selection.id), method: :get do %>
+            <% if params[:query] %>
+              <%= hidden_field_tag :address, params[:address], value: params[:address] %>
+            <% else %>
+              <%= hidden_field_tag :address, params[:address], value: params[:restaurant][:address] %>
+            <% end %>
+            <%= button_tag(type: "submit", class: "") do %>
+              <div class="select-cards">
+                <div class="imagecontainer">
+                  <%= image_tag("#{selection.photo}", class: "main-rest-image") %>
                 </div>
-                <div class="secondrow">
-                  <p> <%= selection.cuisine %>
-                   - <%= selection.vegan %></p>
+                <div class="lower-select-card container">
+                  <div class="firstrow">
+                    <p><%= selection.name %></p>
+                  </div>
+                  <div class="secondrow">
+                    <p> <%= selection.cuisine %>
+                     - <%= selection.vegan %></p>
+                  </div>
                 </div>
               </div>
-            </div>
-            <br>
+              <br>
+            <% end %>
           <% end %>
         <% end %>
-
       </div>
     <% end %>
   </div>
-
 </div>
 
 
