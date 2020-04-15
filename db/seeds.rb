@@ -32,8 +32,9 @@ puts "populating Menu"
     price: (5...30).to_a.sample,
     mealtype: ["S", "M", "D"].sample,
     restaurant_id: Restaurant.last.id
+
   })
-  sleep(1)
+  sleep(0.1)
   puts "#{MenuItem.last.dish_name} added to #{Restaurant.last.name}"
 end
 
@@ -59,8 +60,9 @@ sleep(3)
     price: (5...30).to_a.sample,
     mealtype: ["S", "M", "D"].sample,
     restaurant_id: Restaurant.last.id
+
   })
-  sleep(1)
+  sleep(0.1)
   puts "#{MenuItem.last.dish_name} added to #{Restaurant.last.name}"
 end
 
@@ -83,8 +85,9 @@ sleep(3)
     price: (5...30).to_a.sample,
     mealtype: ["S", "M", "D"].sample,
     restaurant_id: Restaurant.last.id
+
   })
-  sleep(1)
+  sleep(0.1)
   puts "#{MenuItem.last.dish_name} added to #{Restaurant.last.name}"
 end
 
@@ -107,8 +110,9 @@ sleep(3)
     price: (5...30).to_a.sample,
     mealtype: ["S", "M", "D"].sample,
     restaurant_id: Restaurant.last.id
+
   })
-  sleep(1)
+  sleep(0.1)
   puts "#{MenuItem.last.dish_name} added to #{Restaurant.last.name}"
 end
 
@@ -131,8 +135,9 @@ sleep(3)
     price: (5...30).to_a.sample,
     mealtype: ["S", "M", "D"].sample,
     restaurant_id: Restaurant.last.id
+
   })
-  sleep(1)
+  sleep(0.1)
   puts "#{MenuItem.last.dish_name} added to #{Restaurant.last.name}"
 end
 
@@ -155,8 +160,9 @@ sleep(3)
     price: (5...30).to_a.sample,
     mealtype: ["S", "M", "D"].sample,
     restaurant_id: Restaurant.last.id
+
   })
-  sleep(1)
+  sleep(0.1)
   puts "#{MenuItem.last.dish_name} added to #{Restaurant.last.name}"
 end
 
@@ -179,8 +185,9 @@ sleep(3)
     price: (5...30).to_a.sample,
     mealtype: ["S", "M", "D"].sample,
     restaurant_id: Restaurant.last.id
+
   })
-  sleep(1)
+  sleep(0.1)
   puts "#{MenuItem.last.dish_name} added to #{Restaurant.last.name}"
 end
 
@@ -203,8 +210,9 @@ sleep(3)
     price: (5...30).to_a.sample,
     mealtype: ["S", "M", "D"].sample,
     restaurant_id: Restaurant.last.id
+
   })
-  sleep(1)
+  sleep(0.1)
   puts "#{MenuItem.last.dish_name} added to #{Restaurant.last.name}"
 end
 
@@ -228,8 +236,9 @@ sleep(3)
     price: (5...30).to_a.sample,
     mealtype: ["S", "M", "D"].sample,
     restaurant_id: Restaurant.last.id
+
   })
-  sleep(1)
+  sleep(0.1)
   puts "#{MenuItem.last.dish_name} added to #{Restaurant.last.name}"
 end
 
@@ -252,8 +261,9 @@ sleep(3)
     price: (5...30).to_a.sample,
     mealtype: ["S", "M", "D"].sample,
     restaurant_id: Restaurant.last.id
+
   })
-  sleep(1)
+  sleep(0.1)
   puts "#{MenuItem.last.dish_name} added to #{Restaurant.last.name}"
 end
 
@@ -276,8 +286,9 @@ sleep(3)
     price: (5...30).to_a.sample,
     mealtype: ["S", "M", "D"].sample,
     restaurant_id: Restaurant.last.id
+
   })
-  sleep(1)
+  sleep(0.1)
   puts "#{MenuItem.last.dish_name} added to #{Restaurant.last.name}"
 end
 
@@ -300,8 +311,9 @@ sleep(3)
     price: (5...30).to_a.sample,
     mealtype: ["S", "M", "D"].sample,
     restaurant_id: Restaurant.last.id
+
   })
-  sleep(1)
+  sleep(0.1)
   puts "#{MenuItem.last.dish_name} added to #{Restaurant.last.name}"
 end
 
@@ -324,8 +336,9 @@ sleep(3)
     price: (5...30).to_a.sample,
     mealtype: ["S", "M", "D"].sample,
     restaurant_id: Restaurant.last.id
+
   })
-  sleep(1)
+  sleep(0.1)
   puts "#{MenuItem.last.dish_name} added to #{Restaurant.last.name}"
 end
 
@@ -348,8 +361,9 @@ sleep(3)
     price: (5...30).to_a.sample,
     mealtype: ["S", "M", "D"].sample,
     restaurant_id: Restaurant.last.id
+
   })
-  sleep(1)
+  sleep(0.1)
   puts "#{MenuItem.last.dish_name} added to #{Restaurant.last.name}"
 end
 
@@ -372,8 +386,9 @@ sleep(3)
     price: (5...30).to_a.sample,
     mealtype: ["S", "M", "D"].sample,
     restaurant_id: Restaurant.last.id
+
   })
-  sleep(1)
+  sleep(0.1)
   puts "#{MenuItem.last.dish_name} added to #{Restaurant.last.name}"
 end
 
@@ -396,8 +411,9 @@ sleep(3)
     price: (5...30).to_a.sample,
     mealtype: ["S", "M", "D"].sample,
     restaurant_id: Restaurant.last.id
+
   })
-  sleep(1)
+  sleep(0.1)
   puts "#{MenuItem.last.dish_name} added to #{Restaurant.last.name}"
 end
 
@@ -419,8 +435,9 @@ puts "created restaurant called #{Restaurant.last.name}"
     price: (5...30).to_a.sample,
     mealtype: ["S", "M", "D"].sample,
     restaurant_id: Restaurant.last.id
+
   })
-  sleep(1)
+  sleep(0.1)
   puts "#{MenuItem.last.dish_name} added to #{Restaurant.last.name}"
 end
 puts "created all restaurant seed"
@@ -452,6 +469,19 @@ sleep(0.1)
 
 Restaurant.all.each do |restaurant|
   puts "#{restaurant.address}"
+end
+
+puts "creating options"
+
+MenuItem.all.each do |item|
+  3.times do
+    Option.create({
+      description: Faker::Food.ingredient,
+      price: [0, 1, 2, 3].sample,
+      menu_item_id: item.id
+    })
+    puts "."
+  end
 end
 
 
