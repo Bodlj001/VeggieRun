@@ -47,7 +47,6 @@
 
   <% @starters.each_with_index do |item, index| %>
   <!-- Button trigger modal -->
-
     <button type="button" class="" data-toggle="modal" data-target="#exampleModalCenter<%= index %>">
       <div class="container">
         <div class="card-product">
@@ -74,7 +73,12 @@
             </button>
           </div>
           <div class="modal-body">
-            ...
+            <% @options = Option.where(menu_item_id: item.id) %>
+            <% @options.each do |option| %>
+              <%= option.description %>
+              <p>£<%= option.price %>.00</p>
+              <br>
+            <% end %>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
