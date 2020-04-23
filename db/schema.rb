@@ -13,12 +13,10 @@
 ActiveRecord::Schema.define(version: 2020_04_15_100622) do
 
   # These are extensions that must be enabled in order to support this database
-  enable_extension "hstore"
   enable_extension "plpgsql"
 
   create_table "meals", force: :cascade do |t|
     t.string "order"
-    t.string "hstore"
     t.datetime "time"
     t.integer "price"
     t.bigint "restaurants_id", null: false
@@ -44,6 +42,7 @@ ActiveRecord::Schema.define(version: 2020_04_15_100622) do
   create_table "options", force: :cascade do |t|
     t.string "description"
     t.integer "price"
+    t.boolean "added", default: false
     t.bigint "menu_item_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
