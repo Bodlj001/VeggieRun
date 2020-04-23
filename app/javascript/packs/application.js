@@ -32,15 +32,41 @@ if (addressInput) {
   });
 }
 
-// const areVeggie = document.getElementById('veggie-button');
 
-// areVeggie.addEventListener('click', (event) => {
-//   console.log(event);
-//   console.log(areVeggie.innerHTML);
-//   if (areVeggie.innerHTML = "Vegan") {
-//     areVeggie.innerHTML = "Veggie";
-//   } else if (areVeggie.innerHTML = "Veggie") {
-//     areVeggie.innerHTML = "Vegan";
-//   }
-//   event.preventDefault();
-// });
+
+document.querySelectorAll('.item-cards').forEach(item => {
+  item.addEventListener('click', event => {
+    // var focusId = myDOMElement.id
+    console.log(event);
+
+    var object = event.path.sort()[1].id
+
+    var itemPriceArray = object.split("-")
+    var item = itemPriceArray[0]
+    var price = itemPriceArray[1]
+    console.log(item);
+    console.log(price);
+
+    const addingToOrder = document.getElementById(`adding_order${object}`);
+
+    const orderList = document.getElementById('order_list');
+
+    addingToOrder.addEventListener("click", basketFunction)
+
+    function basketFunction() {
+      var totalPrice = getElementById("")
+      orderList.insertAdjacentHTML('beforeend',
+      `<div class="basket-item" style="display:flex;">
+        <p>${item}</p>
+        <p>${price}</p>
+      </div>`);
+    }
+  });
+})
+
+
+
+
+
+
+

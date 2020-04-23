@@ -47,7 +47,7 @@
 
   <% @starters.each_with_index do |item, index| %>
   <!-- Button trigger modal -->
-    <button type="button" class="" data-toggle="modal" data-target="#exampleModalCenter<%= index %>">
+    <button type="button" class="item-cards" id="<%=item.dish_name%>-<%=item.price%>" data-toggle="modal" data-target="#exampleModalCenter<%= index %>">
       <div class="container">
         <div class="card-product">
           <%= image_tag('928-Simple-King-Prawn-Garlic--Chilli-Linguine.2-x750.jpg', class: "dish_image") %>
@@ -61,6 +61,7 @@
         </div>
       </div>
     </button>
+
 
     <!-- Modal -->
     <div class="modal fade" id="exampleModalCenter<%= index %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
@@ -81,12 +82,8 @@
             <% end %>
           </div>
           <div class="modal-footer">
-            <%= form_tag restaurant_meals_path(@restaurant), method: :post do %>
-              <%= hidden_field_tag :order, value: "#{item.dish_name}" %>
-              <%= hidden_field_tag :price, value: item.price %>
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-              <button type="submit" class="btn btn-primary">Add to Order</button>
-            <% end %>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+            <button type="button" class="btn btn-primary" id="adding_order<%=item.dish_name%>-<%=item.price%>" data-dismiss="modal">Add to Order</button>
           </div>
         </div>
       </div>
@@ -145,12 +142,12 @@
   <button class="btn btn-primary buttone" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
     <i class="fas fa-shopping-basket"></i>
     View current basket
-    £0.00
+    <p>£0.00</p>
   </button>
 
   <div class="collapse" id="collapseExample">
-    <div class="card card-body">
-      Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+    <div class="card card-body" id="order_list">
+
     </div>
   </div>
 </div>
