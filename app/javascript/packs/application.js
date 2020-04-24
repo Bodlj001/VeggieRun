@@ -37,15 +37,16 @@ if (addressInput) {
 document.querySelectorAll('.item-cards').forEach(item => {
   item.addEventListener('click', event => {
     // var focusId = myDOMElement.id
-    console.log(event);
+    // console.log(event);
 
     var object = event.path.sort()[1].id
 
-    var itemPriceArray = object.split("-")
+    var itemPriceArray = object.split("-");
     var item = itemPriceArray[0]
-    var price = itemPriceArray[1]
-    console.log(item);
-    console.log(price);
+    var price = parseInt(itemPriceArray[1]);
+
+    // console.log(item);
+    // console.log(price);
 
     const addingToOrder = document.getElementById(`adding_order${object}`);
 
@@ -54,16 +55,40 @@ document.querySelectorAll('.item-cards').forEach(item => {
     addingToOrder.addEventListener("click", basketFunction)
 
     function basketFunction() {
-      var totalPrice = getElementById("")
+      // var counter = 0
       orderList.insertAdjacentHTML('beforeend',
-      `<div class="basket-item" style="display:flex;">
+      `<div class="basket-item" id="${item}" style="display:flex;justify-content:space-between;">
         <p>${item}</p>
         <p>${price}</p>
+        <i id="bask${item}" class="fas fa-trash"></i>
       </div>`);
+      var totalPrice = document.getElementById("the-total-price");
+      var oldTotal = parseInt(totalPrice.innerHTML.split('£')[1]);
+      // console.log();
+      var newTotal = oldTotal += price
+      totalPrice.innerHTML = ""
+      totalPrice.innerHTML = `£${newTotal}.00`
+      // console.log(newTotal);
+
+      var counter = document.getElementById(`bask${item}`);
+      counter.addEventListener('click', event => {
+        var bindiv = event.path[1]
+        bindiv.remove();
+        // counter += 1
+      });
     }
   });
 })
 
+
+// const okay = document.querySelectorAll('.fa-trash');
+// console.log(okay);
+
+// document.querySelectorAll('.fa-trash').forEach(item => {
+//   item.addEventListener('click', event => {
+//     console.log(event);
+//   });
+// })
 
 
 
