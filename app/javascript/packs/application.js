@@ -32,6 +32,9 @@ if (addressInput) {
   });
 }
 
+var counter = 1
+
+peepShow()
 
 
 document.querySelectorAll('.item-cards').forEach(item => {
@@ -55,12 +58,11 @@ document.querySelectorAll('.item-cards').forEach(item => {
     addingToOrder.addEventListener("click", basketFunction)
 
     function basketFunction() {
-      // var counter = 0
       orderList.insertAdjacentHTML('beforeend',
-      `<div class="basket-item" id="${item}" style="display:flex;justify-content:space-between;">
+      `<div class="basket-item" id="${item}${counter}" style="display:flex;justify-content:space-between;">
         <p>${item}</p>
         <p>${price}</p>
-        <i id="bask${item}" class="fas fa-trash"></i>
+        <i id="bask${item}${counter}" class="fas fa-trash"></i>
       </div>`);
       var totalPrice = document.getElementById("the-total-price");
       var oldTotal = parseInt(totalPrice.innerHTML.split('£')[1]);
@@ -68,17 +70,41 @@ document.querySelectorAll('.item-cards').forEach(item => {
       var newTotal = oldTotal += price
       totalPrice.innerHTML = ""
       totalPrice.innerHTML = `£${newTotal}.00`
+      peepShow()
       // console.log(newTotal);
 
-      var counter = document.getElementById(`bask${item}`);
-      counter.addEventListener('click', event => {
+      var bin = document.getElementById(`bask${item}${counter}`);
+      bin.addEventListener('click', event => {
         var bindiv = event.path[1]
         bindiv.remove();
-        // counter += 1
+        counter += 1
+
+        peepShow()
+
+
+        var deletePrice = document.getElementById("the-total-price");
+        var refTotal = parseInt(totalPrice.innerHTML.split('£')[1]);
+
+        var newTotal = refTotal -= price
+        deletePrice.innerHTML = ""
+        deletePrice.innerHTML = `£${newTotal}.00`
+
       });
     }
   });
 })
+
+function peepShow() {
+  var x = document.getElementById('bottombasket');
+
+  if (document.getElementsByClassName('basket-item').length > 0) {
+    x.style.visibility = 'visible';
+  } else {
+    x.style.visibility = 'hidden';
+  }
+}
+
+
 
 
 // const okay = document.querySelectorAll('.fa-trash');
